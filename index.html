@@ -372,6 +372,42 @@
   .value-grid > div:nth-child(2) .v-word { color: var(--tone-coral); }
   .value-grid > div:nth-child(3) .v-word { color: var(--tone-gold); }
 
+  /* ---------- travel photo duo ---------- */
+  .travel-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  @media (max-width: 560px) { .travel-photos { grid-template-columns: 1fr; } }
+  .travel-photos img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    display: block;
+  }
+
+  /* ---------- horoscope accordion ---------- */
+  .horo-details { margin-top: 8px; }
+  .horo-summary {
+    cursor: pointer;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent);
+    padding: 6px 0;
+  }
+  .horo-summary::-webkit-details-marker { display: none; }
+  .horo-summary::marker { content: ""; }
+  .horo-summary .chevron { width: 15px; height: 15px; transition: transform 0.25s ease; }
+  .horo-details[open] .horo-summary .chevron { transform: rotate(180deg); }
+  .horo-details-body { padding-top: 28px; }
+
   /* horoscope trio */
   .trio {
     display: grid;
@@ -703,8 +739,8 @@
     </p>
     <button class="hero-photo" id="heroPhoto" type="button" aria-label="View profile photo">
       <img src="profile-photo.jpeg" alt="Jagathish Kumar T S" onerror="this.closest('#heroPhoto').classList.add('missing')">
-      <span class="en">Photo<br>to be added</span>
-      <span class="ta">புகைப்படம்<br>சேர்க்கப்படும்</span>
+      <span class="en">Photo unavailable</span>
+      <span class="ta">புகைப்படம் இல்லை</span>
     </button>
     <div class="hero-cta-row">
       <a class="btn-primary" href="tel:+919487668352">
@@ -732,14 +768,14 @@
       <div class="fact-label"><span class="en">170 cm</span><span class="ta">170 செ.மீ</span></div>
     </div>
     <div>
-      <div class="fact-num" style="font-size:clamp(0.9rem,2.3vw,1.25rem);">
-        <span class="en">Finding the Right Person to Marry</span><span class="ta">சரியான துணையைத் தேடுகிறார்</span>
+      <div class="fact-num" style="font-size:clamp(1rem,2.6vw,1.4rem);">
+        <span class="en">Never Married</span><span class="ta">திருமணமாகவில்லை</span>
       </div>
-      <div class="fact-label"><span class="en">Status</span><span class="ta">நிலை</span></div>
+      <div class="fact-label"><span class="en">Marital Status</span><span class="ta">திருமண நிலை</span></div>
     </div>
     <div>
       <div class="fact-num" style="font-size:clamp(1rem,2.6vw,1.4rem);">
-        <span class="en">Non-Veg</span><span class="ta">அசைவம்</span>
+        <span class="en">Veg &amp; Non-Veg</span><span class="ta">சைவம் &amp; அசைவம்</span>
       </div>
       <div class="fact-label"><span class="en">Food Habit</span><span class="ta">உணவுப் பழக்கம்</span></div>
     </div>
@@ -758,12 +794,12 @@
     <p class="eyebrow"><span class="en">In his words</span><span class="ta">அவரது வார்த்தைகளில்</span></p>
     <h2 class="section-title"><span class="en">About Me</span><span class="ta">என்னைப் பற்றி</span></h2>
     <p class="body-copy">
-      <span class="en">I'd describe myself as a calm, practical and family-oriented person who enjoys learning and discovering new things. I'm an ambivert — comfortable spending quiet time by myself, but equally happy around people I know well. I enjoy travelling, good food and exploring new experiences.</span>
-      <span class="ta">நான் அமைதியானவன், நடைமுறை சிந்தனை உள்ளவன், குடும்பத்தை மதிக்கக்கூடியவன் என என்னை வர்ணிப்பேன். புதிய விஷயங்களைக் கற்றுக்கொள்வதிலும் அறிந்துகொள்வதிலும் எனக்கு ஆர்வம் உண்டு. நான் ஒரு ambivert — தனியாக அமைதியாக நேரம் செலவிடுவதையும், நன்கு பழகிய நபர்களுடன் இருப்பதையும் ஒரேமாதிரி விரும்புவேன். பயணம் செய்வது, நல்ல உணவு சாப்பிடுவது, புதிய அனுபவங்களை அறிவது ஆகியவை எனக்குப் பிடிக்கும்.</span>
+      <span class="en">I'm a calm and practical person who likes keeping life simple. I'm an ambivert — I enjoy my own space, but I equally enjoy spending time with people I'm comfortable with. I like travelling, good food and learning new things.</span>
+      <span class="ta">நான் அமைதியான, நடைமுறை சிந்தனை உள்ள ஒருவன், வாழ்க்கையை எளிமையாக வைத்திருக்க விரும்புவேன். நான் ஒரு ambivert — எனக்கென்று தனி நேரமும் பிடிக்கும், நன்கு பழகிய நபர்களுடன் நேரம் செலவிடுவதும் பிடிக்கும். பயணம், நல்ல உணவு, புதிய விஷயங்களைக் கற்றுக்கொள்வது ஆகியவை எனக்குப் பிடிக்கும்.</span>
     </p>
     <p class="body-copy">
-      <span class="en">When I get some free time, I usually find myself watching political content, technology videos or a good series. I value simplicity, adaptability and staying curious about life.</span>
-      <span class="ta">ஓய்வு நேரம் கிடைத்தால், பொதுவாக அரசியல் தொடர்பான உள்ளடக்கம், தொழில்நுட்ப வீடியோக்கள் அல்லது ஒரு நல்ல தொடர் பார்ப்பதில் நேரத்தைக் கழிப்பேன். எளிமை, தகவமைப்புத் திறன், வாழ்க்கையில் ஆர்வத்துடன் இருப்பது ஆகியவற்றை நான் மதிக்கிறேன்.</span>
+      <span class="en">On a relaxed day, you'll probably find me watching political content, technology videos or a good series.</span>
+      <span class="ta">ஓய்வு நேரத்தில், பொதுவாக அரசியல் தொடர்பான உள்ளடக்கம், தொழில்நுட்ப வீடியோக்கள் அல்லது ஒரு நல்ல தொடரைப் பார்த்துக்கொண்டிருப்பேன்.</span>
     </p>
   </div>
 </section>
@@ -776,11 +812,8 @@
     <div class="pill-row">
       <span class="pill"><span class="en">Calm &amp; grounded</span><span class="ta">அமைதியான, நிலைத்த மனநிலை</span></span>
       <span class="pill"><span class="en">Family-oriented</span><span class="ta">குடும்பத்தை நேசிப்பவன்</span></span>
-      <span class="pill"><span class="en">Practical</span><span class="ta">நடைமுறை சிந்தனை உள்ளவன்</span></span>
-      <span class="pill"><span class="en">Curious &amp; always learning</span><span class="ta">ஆர்வமுள்ள, தொடர்ந்து கற்பவன்</span></span>
-      <span class="pill"><span class="en">Ambivert</span><span class="ta">ஆம்பிவெர்ட்</span></span>
+      <span class="pill"><span class="en">Curious &amp; ambitious</span><span class="ta">ஆர்வமுள்ள, இலக்கு கொண்டவன்</span></span>
       <span class="pill"><span class="en">Simple &amp; adaptable</span><span class="ta">எளிமையான, தகவமைக்கக்கூடியவன்</span></span>
-      <span class="pill"><span class="en">Ambitious about life &amp; career</span><span class="ta">வாழ்க்கை &amp; தொழிலில் இலக்கு கொண்டவன்</span></span>
     </div>
   </div>
 </section>
@@ -803,13 +836,6 @@
         <div class="value">5 ft 7 in / 170 cm</div>
       </div>
       <div class="spec-row">
-        <div class="label"><span class="en">Body Type &amp; Complexion</span><span class="ta">உடல் அமைப்பு &amp; நிறம்</span></div>
-        <div class="value">
-          <span class="en">Average build, Normal physical status, Fair complexion</span>
-          <span class="ta">சராசரி உடல் அமைப்பு, இயல்பான உடல்நிலை, நல்ல நிறம்</span>
-        </div>
-      </div>
-      <div class="spec-row">
         <div class="label"><span class="en">Mother Tongue</span><span class="ta">தாய்மொழி</span></div>
         <div class="value"><span class="en">Tamil</span><span class="ta">தமிழ்</span></div>
       </div>
@@ -820,50 +846,11 @@
       <div class="spec-row">
         <div class="label"><span class="en">Habits</span><span class="ta">பழக்கவழக்கங்கள்</span></div>
         <div class="value">
-          <span class="en">Non-vegetarian around 3 days a week, vegetarian the rest — doesn't drink, doesn't smoke</span>
-          <span class="ta">வாரத்தில் சுமார் 3 நாட்கள் அசைவம், மீதி நாட்களில் சைவம் — மது அருந்துவதில்லை, புகைபிடிப்பதில்லை</span>
+          <span class="en">Vegetarian &amp; Non-Vegetarian — doesn't drink, doesn't smoke</span>
+          <span class="ta">சைவம் &amp; அசைவம் — மது அருந்துவதில்லை, புகைபிடிப்பதில்லை</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CAREER -->
-<section class="section alt tone-teal" data-reveal id="career">
-  <div class="section-inner">
-    <p class="eyebrow"><span class="en">Work</span><span class="ta">பணி</span></p>
-    <h2 class="section-title"><span class="en">Education &amp; Career</span><span class="ta">கல்வி &amp; பணி</span></h2>
-    <div class="spec-list">
-      <div class="spec-row">
-        <div class="label"><span class="en">B.Tech</span><span class="ta">பி.டெக்</span></div>
-        <div class="value">
-          <span class="en">Mechanical Engineering, SRM University, Chennai <span class="sub">— 2014 to 2018</span></span>
-          <span class="ta">இயந்திரவியல், எஸ்.ஆர்.எம். பல்கலைக்கழகம், சென்னை <span class="sub">— 2014 முதல் 2018 வரை</span></span>
-        </div>
-      </div>
-      <div class="spec-row">
-        <div class="label"><span class="en">M.E.</span><span class="ta">எம்.இ.</span></div>
-        <div class="value">
-          <span class="en">Manufacturing Systems Management, College of Engineering, Guindy, Anna University <span class="sub">— 2018 to 2020</span></span>
-          <span class="ta">உற்பத்தி முறைமை மேலாண்மை, கிண்டி பொறியியல் கல்லூரி, அண்ணா பல்கலைக்கழகம் <span class="sub">— 2018 முதல் 2020 வரை</span></span>
-        </div>
-      </div>
-      <div class="spec-row">
-        <div class="label"><span class="en">Occupation</span><span class="ta">பணி</span></div>
-        <div class="value">
-          <span class="en">Product Manager, Mapmyindia <span class="sub">— Private sector, Bengaluru</span></span>
-          <span class="ta">தயாரிப்பு மேலாளர், Mapmyindia <span class="sub">— தனியார் துறை, பெங்களூரு</span></span>
-        </div>
-      </div>
-      <div class="spec-row">
-        <div class="label"><span class="en">Annual Income</span><span class="ta">ஆண்டு வருமானம்</span></div>
-        <div class="value"><span class="en">₹10 – 12 Lakhs per annum</span><span class="ta">ஆண்டுக்கு ரூ. 10 – 12 லட்சம்</span></div>
-      </div>
-    </div>
-    <a class="portfolio-link" href="https://jagathishkumar.github.io/" target="_blank" rel="noopener">
-      <span class="en">See his professional portfolio</span><span class="ta">தொழில்முறை போர்ட்ஃபோலியோவைக் காண</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
-    </a>
   </div>
 </section>
 
@@ -920,11 +907,50 @@
     </div>
     <div class="pull-quote">
       <p class="q-text">
-        <span class="en">"I work as a government school teacher and my wife is a homemaker. We are looking for a bride for our elder son, who holds a master's degree in engineering and works as a Product Manager at MapmyIndia. Our younger son is a doctor preparing for his NEET PG."</span>
-        <span class="ta">"நான் ஒரு அரசு பள்ளி ஆசிரியராகப் பணியாற்றுகிறேன், என் மனைவி இல்லத்தரசி. பொறியியலில் முதுகலைப் பட்டம் பெற்று, MapmyIndia-வில் தயாரிப்பு மேலாளராகப் பணிபுரியும் எங்கள் மூத்த மகனுக்கு பொருத்தமான மணப்பெண்ணைத் தேடுகிறோம். எங்கள் இளைய மகன் மருத்துவர், NEET PG தேர்வுக்குத் தயாராகிறார்."</span>
+        <span class="en">"We are looking for a well-educated and understanding partner for our son, someone with whom he can build a happy and meaningful life."</span>
+        <span class="ta">"எங்கள் மகனுக்கு நல்ல படிப்பறிவும் புரிந்துணர்வும் கொண்ட ஒரு துணையை நாங்கள் தேடுகிறோம், அவருடன் இணைந்து மகிழ்ச்சியான, அர்த்தமுள்ள வாழ்க்கையை அமைக்கக்கூடியவர்."</span>
       </p>
-      <p class="q-who"><span class="en">— P.N. Thirugnanam, father</span><span class="ta">— P.N. திருஞானம், தந்தை</span></p>
+      <p class="q-who"><span class="en">— P.N. Thirugnanam, Father</span><span class="ta">— P.N. திருஞானம், தந்தை</span></p>
     </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="section alt tone-teal" data-reveal id="career">
+  <div class="section-inner">
+    <p class="eyebrow"><span class="en">Work</span><span class="ta">பணி</span></p>
+    <h2 class="section-title"><span class="en">Education &amp; Career</span><span class="ta">கல்வி &amp; பணி</span></h2>
+    <div class="spec-list">
+      <div class="spec-row">
+        <div class="label"><span class="en">B.Tech</span><span class="ta">பி.டெக்</span></div>
+        <div class="value">
+          <span class="en">Mechanical Engineering, SRM University, Chennai <span class="sub">— 2014 to 2018</span></span>
+          <span class="ta">இயந்திரவியல், எஸ்.ஆர்.எம். பல்கலைக்கழகம், சென்னை <span class="sub">— 2014 முதல் 2018 வரை</span></span>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="label"><span class="en">M.E.</span><span class="ta">எம்.இ.</span></div>
+        <div class="value">
+          <span class="en">Manufacturing Systems Management, College of Engineering, Guindy, Anna University <span class="sub">— 2018 to 2020</span></span>
+          <span class="ta">உற்பத்தி முறைமை மேலாண்மை, கிண்டி பொறியியல் கல்லூரி, அண்ணா பல்கலைக்கழகம் <span class="sub">— 2018 முதல் 2020 வரை</span></span>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="label"><span class="en">Occupation</span><span class="ta">பணி</span></div>
+        <div class="value">
+          <span class="en">Product Manager, Mapmyindia <span class="sub">— Private sector, Bengaluru</span></span>
+          <span class="ta">தயாரிப்பு மேலாளர், Mapmyindia <span class="sub">— தனியார் துறை, பெங்களூரு</span></span>
+        </div>
+      </div>
+      <div class="spec-row">
+        <div class="label"><span class="en">Annual Income</span><span class="ta">ஆண்டு வருமானம்</span></div>
+        <div class="value"><span class="en">₹10 – 12 Lakhs per annum</span><span class="ta">ஆண்டுக்கு ரூ. 10 – 12 லட்சம்</span></div>
+      </div>
+    </div>
+    <a class="portfolio-link" href="https://jagathishkumar.github.io/" target="_blank" rel="noopener">
+      <span class="en">See his professional portfolio</span><span class="ta">தொழில்முறை போர்ட்ஃபோலியோவைக் காண</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
   </div>
 </section>
 
@@ -940,19 +966,24 @@
     <div class="pill-group">
       <p class="g-title"><span class="en">Interests</span><span class="ta">ஆர்வங்கள்</span></p>
       <div class="pill-row">
+        <span class="pill"><span class="en">Travelling</span><span class="ta">பயணம்</span></span>
+        <span class="pill"><span class="en">Good food</span><span class="ta">நல்ல உணவு</span></span>
+        <span class="pill"><span class="en">Learning new things</span><span class="ta">புதிய விஷயங்களைக் கற்றல்</span></span>
+        <span class="pill"><span class="en">Technology</span><span class="ta">தொழில்நுட்பம்</span></span>
+        <span class="pill"><span class="en">Political &amp; current affairs</span><span class="ta">அரசியல் &amp; நடப்பு நிகழ்வுகள்</span></span>
         <span class="pill"><span class="en">Gardening &amp; landscaping</span><span class="ta">தோட்டக்கலை</span></span>
         <span class="pill"><span class="en">Listening to podcasts</span><span class="ta">பாட்காஸ்ட் கேட்டல்</span></span>
-        <span class="pill"><span class="en">Technology</span><span class="ta">தொழில்நுட்பம்</span></span>
         <span class="pill"><span class="en">Tutoring</span><span class="ta">பயிற்றுவித்தல்</span></span>
         <span class="pill"><span class="en">Volunteer work</span><span class="ta">தன்னார்வப் பணி</span></span>
       </div>
     </div>
     <div class="pill-group">
-      <p class="g-title"><span class="en">Music, Reading &amp; Movies</span><span class="ta">இசை, வாசிப்பு &amp; திரைப்படங்கள்</span></p>
+      <p class="g-title"><span class="en">Music, Reading, Movies &amp; Series</span><span class="ta">இசை, வாசிப்பு, திரைப்படங்கள் &amp; தொடர்கள்</span></p>
       <div class="pill-row">
         <span class="pill"><span class="en">Classical &amp; devotional music</span><span class="ta">சாஸ்திரிய &amp; பக்தி இசை</span></span>
         <span class="pill"><span class="en">Business &amp; professional reading</span><span class="ta">தொழில் சார்ந்த வாசிப்பு</span></span>
         <span class="pill"><span class="en">Action, comedy &amp; romantic films</span><span class="ta">அதிரடி, நகைச்சுவை &amp; காதல் படங்கள்</span></span>
+        <span class="pill"><span class="en">Series &amp; OTT shows</span><span class="ta">தொடர்கள் &amp; OTT நிகழ்ச்சிகள்</span></span>
       </div>
     </div>
     <div class="pill-group">
@@ -976,14 +1007,26 @@
       <span class="ta">திருமணம் என்பது ஒன்றாக ஒரு வாழ்க்கையை கட்டியெழுப்புவது என்று நான் நம்புகிறேன் — தனிநபராக இருப்பதற்கும் இணைந்திருப்பதற்கும் இடம் கொடுக்கும் வகையில். பெங்களூருவில் இருப்பதே எனது விருப்பம், ஆனாலும் வசிப்பிட ஏற்பாடு சூழ்நிலைக்கு ஏற்ப மாறலாம். இரு குடும்பங்களும் எங்கள் வாழ்க்கையில் சமமான பங்கு வகிக்க வேண்டும் என்று நம்புகிறேன், பயணமும் திருமண வாழ்க்கையின் முக்கிய பகுதியாக இருக்க வேண்டும்.</span>
     </p>
     <p class="body-copy">
-      <span class="en">Household responsibilities can be shared equally, and I'm open to having children when the time feels right. If she wishes to work or build her own career, that is entirely her choice — and I will support it fully. Mutual respect and trust are what I'd want this life to be built on.</span>
-      <span class="ta">வீட்டுப் பொறுப்புகளை சமமாகப் பகிர்ந்துகொள்ளலாம், சரியான நேரத்தில் குழந்தைகளைப் பெற்றுக்கொள்வதற்கும் தயாராக இருக்கிறேன். அவள் வேலை செய்ய விரும்பினால் அல்லது தொழிலை வளர்க்க விரும்பினால், அது முழுக்க முழுக்க அவளது சொந்த முடிவு — அதை நான் முழுமையாக ஆதரிப்பேன். பரஸ்பர மரியாதையும் நம்பிக்கையும்தான் இந்த வாழ்க்கை கட்டமைக்கப்பட வேண்டும் என விரும்புகிறேன்.</span>
+      <span class="en">Household responsibilities can be shared equally, and I'm open to having children in the future. If she wishes to work or build her own career, that is entirely her choice — and I will support it fully.</span>
+      <span class="ta">வீட்டுப் பொறுப்புகளை சமமாகப் பகிர்ந்துகொள்ளலாம், எதிர்காலத்தில் குழந்தைகளைப் பெற்றுக்கொள்வதற்கும் தயாராக இருக்கிறேன். அவள் வேலை செய்ய விரும்பினால் அல்லது தொழிலை வளர்க்க விரும்பினால், அது முழுக்க முழுக்க அவளது சொந்த முடிவு — அதை நான் முழுமையாக ஆதரிப்பேன்.</span>
+    </p>
+  </div>
+</section>
+
+<!-- THE LIFE I'D LIKE TO BUILD -->
+<section class="section tone-gold" data-reveal id="life-build">
+  <div class="section-inner">
+    <p class="eyebrow"><span class="en">Together, ahead</span><span class="ta">ஒன்றாக, முன்னோக்கி</span></p>
+    <h2 class="section-title"><span class="en">The Life I'd Like to Build</span><span class="ta">நான் கட்டியெழுப்ப விரும்பும் வாழ்க்கை</span></h2>
+    <p class="lede-statement">
+      <span class="en">A life where both of us can grow in our careers, enjoy travelling and good food, stay connected with our families, respect each other's individuality, and keep discovering new things together.</span>
+      <span class="ta">எங்கள் இருவரும் தொழிலில் வளரவும், பயணத்தையும் நல்ல உணவையும் அனுபவிக்கவும், குடும்பங்களுடன் தொடர்பில் இருக்கவும், ஒருவர் தனித்துவத்தை மற்றவர் மதிக்கவும், ஒன்றாக புதிய விஷயங்களைக் கண்டறியவும் கூடிய ஒரு வாழ்க்கை.</span>
     </p>
   </div>
 </section>
 
 <!-- WHAT MATTERS MOST -->
-<section class="section tone-gold" data-reveal id="values">
+<section class="section tone-rose" data-reveal id="values">
   <div class="section-inner">
     <p class="eyebrow"><span class="en">His philosophy</span><span class="ta">அவரது மனநிலை</span></p>
     <h2 class="section-title"><span class="en">What Matters to Me in a Marriage</span><span class="ta">திருமணத்தில் எனக்கு முக்கியமானவை</span></h2>
@@ -1014,21 +1057,17 @@
         </p>
       </div>
     </div>
-    <p class="body-copy">
-      <span class="en">I want to be my partner's biggest supporter, listen with an open heart, and make sure disagreements are discussed calmly and resolved together. I respect personal space, and I don't expect perfection from her or from myself — just genuine effort and care.</span>
-      <span class="ta">நான் என் துணையின் மிகப்பெரிய ஆதரவாளராக இருக்க விரும்புகிறேன், மனந்திறந்து கேட்பேன், கருத்து வேறுபாடுகள் அமைதியாக பேசி ஒன்றாகத் தீர்க்கப்பட வேண்டும் என நினைக்கிறேன். தனிப்பட்ட இடத்தை மதிப்பேன், அவளிடமிருந்தோ என்னிடமிருந்தோ முழுமையை எதிர்பார்க்க மாட்டேன் — உண்மையான முயற்சியும் அக்கறையும் போதும்.</span>
-    </p>
   </div>
 </section>
 
 <!-- WHAT YOU CAN EXPECT FROM ME -->
 <section class="section alt tone-teal" data-reveal id="expect-from-me">
   <div class="section-inner">
-    <p class="eyebrow"><span class="en">His promise</span><span class="ta">அவரது வார்த்தை</span></p>
+    <p class="eyebrow"><span class="en">What to expect</span><span class="ta">எதிர்பார்க்கக்கூடியவை</span></p>
     <h2 class="section-title"><span class="en">What You Can Expect From Me</span><span class="ta">என்னிடமிருந்து நீங்கள் எதிர்பார்க்கக்கூடியவை</span></h2>
     <p class="lede-statement">
-      <span class="en">"As a husband, I want my partner to know that she can expect me to be her biggest supporter — someone who listens with an open heart and stands by her."</span>
-      <span class="ta">"ஒரு கணவனாக, நான் என் துணைக்குத் தெரிவிக்க விரும்புவது — என்னை அவளுடைய மிகப்பெரிய ஆதரவாளராகவும், மனந்திறந்து கேட்டு அவளுடன் நிற்பவனாகவும் அவள் எதிர்பார்க்கலாம் என்பதே."</span>
+      <span class="en">"You can expect me to be your biggest supporter — someone who listens with an open heart, respects your personal space and stands by you."</span>
+      <span class="ta">"நான் உங்கள் மிகப்பெரிய ஆதரவாளராக இருப்பேன் — மனந்திறந்து கேட்பவனாகவும், உங்கள் தனிப்பட்ட இடத்தை மதிப்பவனாகவும், உங்களுடன் நிற்பவனாகவும் என்னை எதிர்பார்க்கலாம்."</span>
     </p>
     <div class="pill-row">
       <span class="pill"><span class="en">Calm communication</span><span class="ta">அமைதியான தொடர்பு</span></span>
@@ -1056,8 +1095,12 @@
       <span class="ta">புரிந்துணர்வு உள்ள, சுயாதீனமான, தொழில் மீது கவனம் கொண்ட ஒரு துணை.</span>
     </p>
     <p class="body-copy">
-      <span class="en">Whether she wants to work or build a career is entirely her decision — if she does, I will support her fully. I believe personal space should be respected, and that we should support each other's goals as equal partners.</span>
-      <span class="ta">அவள் வேலை செய்ய வேண்டுமா அல்லது தொழிலை வளர்க்க வேண்டுமா என்பது முற்றிலும் அவளது முடிவு — அவ்வாறு விரும்பினால் நான் முழுமையாக ஆதரிப்பேன். தனிப்பட்ட இடத்தை மதிக்க வேண்டும் என்று நம்புகிறேன், இருவரும் சமமான துணையாளர்களாக ஒருவர் இலக்குகளை மற்றவர் ஆதரிக்க வேண்டும் என நினைக்கிறேன்.</span>
+      <span class="en">I'm looking for someone who has her own ambitions, values mutual respect, communicates openly and wants to build a life together while still being herself.</span>
+      <span class="ta">தன் சொந்த இலக்குகள் உள்ள, பரஸ்பர மரியாதையை மதிக்கும், வெளிப்படையாகப் பேசும், தன்னைத்தானே தக்கவைத்துக்கொண்டு ஒன்றாக ஒரு வாழ்க்கையைக் கட்டியெழுப்ப விரும்பும் ஒருவரை நான் தேடுகிறேன்.</span>
+    </p>
+    <p class="body-copy">
+      <span class="en">Whether she wants to work or build a career is entirely her decision — if she does, I will support her fully.</span>
+      <span class="ta">அவள் வேலை செய்ய வேண்டுமா அல்லது தொழிலை வளர்க்க வேண்டுமா என்பது முற்றிலும் அவளது முடிவு — அவ்வாறு விரும்பினால் நான் முழுமையாக ஆதரிப்பேன்.</span>
     </p>
   </div>
 </section>
@@ -1071,6 +1114,10 @@
       <span class="en">Travel is something I'd love to make a meaningful part of married life — discovering new places, trying new experiences and creating memories together.</span>
       <span class="ta">பயணத்தை திருமண வாழ்க்கையின் அர்த்தமுள்ள பகுதியாக மாற்ற விரும்புகிறேன் — புதிய இடங்களைக் கண்டறிதல், புதிய அனுபவங்களை முயற்சி செய்தல், ஒன்றாக நினைவுகளை உருவாக்குதல்.</span>
     </p>
+    <div class="travel-photos">
+      <img src="8.jpeg" alt="Travel">
+      <img src="9.jpeg" alt="Travel — Baga Beach, Goa">
+    </div>
   </div>
 </section>
 
@@ -1083,60 +1130,68 @@
       <span class="en">Faith and spirituality are important to me, while I believe they are ultimately a personal choice and should be respected within a relationship.</span>
       <span class="ta">நம்பிக்கையும் ஆன்மீகமும் எனக்கு முக்கியமானவை, ஆனாலும் அவை இறுதியில் ஒவ்வொருவரின் தனிப்பட்ட தேர்வு என்றும், ஒரு உறவில் அது மதிக்கப்பட வேண்டும் என்றும் நான் நம்புகிறேன்.</span>
     </p>
-    <div class="spec-list" style="margin-bottom:48px;">
-      <div class="spec-row">
-        <div class="label"><span class="en">Religion &amp; Caste</span><span class="ta">மதம் &amp; சாதி</span></div>
-        <div class="value">
-          <span class="en">Hindu — Vannia Kula Kshatriyar <span class="sub">(Gounder)</span></span>
-          <span class="ta">இந்து — வன்னிய குல க்ஷத்திரியர் <span class="sub">(கவுண்டர்)</span></span>
+    <details class="horo-details">
+      <summary class="horo-summary">
+        <span class="en">View horoscope details</span><span class="ta">ஜாதக விவரங்களைப் பார்க்க</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <div class="horo-details-body">
+        <div class="spec-list" style="margin-bottom:48px;">
+          <div class="spec-row">
+            <div class="label"><span class="en">Religion &amp; Caste</span><span class="ta">மதம் &amp; சாதி</span></div>
+            <div class="value">
+              <span class="en">Hindu — Vannia Kula Kshatriyar <span class="sub">(Gounder)</span></span>
+              <span class="ta">இந்து — வன்னிய குல க்ஷத்திரியர் <span class="sub">(கவுண்டர்)</span></span>
+            </div>
+          </div>
+          <div class="spec-row">
+            <div class="label"><span class="en">Dosham</span><span class="ta">தோஷம்</span></div>
+            <div class="value"><span class="en">Kethu Dosham, Rahu Dosham</span><span class="ta">கேது தோஷம், ராகு தோஷம்</span></div>
+          </div>
         </div>
-      </div>
-      <div class="spec-row">
-        <div class="label"><span class="en">Dosham</span><span class="ta">தோஷம்</span></div>
-        <div class="value"><span class="en">Kethu Dosham, Rahu Dosham</span><span class="ta">கேது தோஷம், ராகு தோஷம்</span></div>
-      </div>
-    </div>
-    <div class="trio">
-      <div class="trio-item">
-        <div class="t-label"><span class="en">Nakshatram</span><span class="ta">நட்சத்திரம்</span></div>
-        <div class="t-value"><span class="en">Uthiradam, 3rd Padam</span><span class="ta">உத்திராடம், 3-ம் பாதம்</span></div>
-      </div>
-      <div class="trio-item">
-        <div class="t-label"><span class="en">Rasi</span><span class="ta">ராசி</span></div>
-        <div class="t-value"><span class="en">Makaram (Capricorn)</span><span class="ta">மகரம்</span></div>
-      </div>
-      <div class="trio-item">
-        <div class="t-label"><span class="en">Lagnam</span><span class="ta">லக்னம்</span></div>
-        <div class="t-value"><span class="en">Meena Lagnam</span><span class="ta">மீன லக்னம்</span></div>
-      </div>
-    </div>
+        <div class="trio">
+          <div class="trio-item">
+            <div class="t-label"><span class="en">Nakshatram</span><span class="ta">நட்சத்திரம்</span></div>
+            <div class="t-value"><span class="en">Uthiradam, 3rd Padam</span><span class="ta">உத்திராடம், 3-ம் பாதம்</span></div>
+          </div>
+          <div class="trio-item">
+            <div class="t-label"><span class="en">Rasi</span><span class="ta">ராசி</span></div>
+            <div class="t-value"><span class="en">Makaram (Capricorn)</span><span class="ta">மகரம்</span></div>
+          </div>
+          <div class="trio-item">
+            <div class="t-label"><span class="en">Lagnam</span><span class="ta">லக்னம்</span></div>
+            <div class="t-value"><span class="en">Meena Lagnam</span><span class="ta">மீன லக்னம்</span></div>
+          </div>
+        </div>
 
-    <div class="horo-gallery-head">
-      <h3><span class="en">Horoscope Charts</span><span class="ta">ஜாதக வரைபடங்கள்</span></h3>
-      <span class="hint"><span class="en">Click an image to view full size</span><span class="ta">முழு அளவில் பார்க்க படத்தை அழுத்தவும்</span></span>
-    </div>
-    <div class="horo-gallery">
-      <a class="horo-img-slot" href="horoscope-1.png" target="_blank" rel="noopener" data-slot>
-        <img src="horoscope-1.png" alt="Horoscope chart" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="slot-caption en">Horoscope Chart</span>
-        <span class="slot-caption ta">ஜாதக வரைபடம்</span>
-        <div class="missing-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="m-title en">HD image not added yet</span>
-          <span class="m-title ta">HD படம் இன்னும் சேர்க்கப்படவில்லை</span>
+        <div class="horo-gallery-head">
+          <h3><span class="en">Horoscope Charts</span><span class="ta">ஜாதக வரைபடங்கள்</span></h3>
+          <span class="hint"><span class="en">Click an image to view full size</span><span class="ta">முழு அளவில் பார்க்க படத்தை அழுத்தவும்</span></span>
         </div>
-      </a>
-      <a class="horo-img-slot" href="horoscope-2.png" target="_blank" rel="noopener" data-slot>
-        <img src="horoscope-2.png" alt="Rasi chart" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="slot-caption en">Rasi Chart</span>
-        <span class="slot-caption ta">ராசி ஜாதக வரைபடம்</span>
-        <div class="missing-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="m-title en">HD image not added yet</span>
-          <span class="m-title ta">HD படம் இன்னும் சேர்க்கப்படவில்லை</span>
+        <div class="horo-gallery">
+          <a class="horo-img-slot" href="horoscope-1.png" target="_blank" rel="noopener" data-slot>
+            <img src="horoscope-1.png" alt="Horoscope chart" onerror="this.closest('[data-slot]').classList.add('missing')">
+            <span class="slot-caption en">Horoscope Chart</span>
+            <span class="slot-caption ta">ஜாதக வரைபடம்</span>
+            <div class="missing-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="m-title en">HD image not added yet</span>
+              <span class="m-title ta">HD படம் இன்னும் சேர்க்கப்படவில்லை</span>
+            </div>
+          </a>
+          <a class="horo-img-slot" href="horoscope-2.png" target="_blank" rel="noopener" data-slot>
+            <img src="horoscope-2.png" alt="Rasi chart" onerror="this.closest('[data-slot]').classList.add('missing')">
+            <span class="slot-caption en">Rasi Chart</span>
+            <span class="slot-caption ta">ராசி ஜாதக வரைபடம்</span>
+            <div class="missing-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="m-title en">HD image not added yet</span>
+              <span class="m-title ta">HD படம் இன்னும் சேர்க்கப்படவில்லை</span>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -1150,90 +1205,90 @@
       <span class="ta">அன்றாட வாழ்க்கை, பணி மற்றும் பயணத்தின் சில தருணங்கள்.</span>
     </p>
     <div class="gallery-grid" id="galleryGrid">
-      <button class="g-item" type="button" data-slot aria-label="On the job" style="--i:0;">
-        <img src="1.jpeg" alt="On the job" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">On the job</span>
-        <span class="g-caption ta">பணியில்</span>
+      <button class="g-item" type="button" data-slot aria-label="Work &amp; life" style="--i:0;">
+        <img src="1.jpeg" alt="Work &amp; life" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Work &amp; life</span>
+        <span class="g-caption ta">பணி &amp; வாழ்க்கை</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="A moment" style="--i:1;">
-        <img src="2.jpeg" alt="A moment" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">A moment</span>
-        <span class="g-caption ta">ஒரு தருணம்</span>
+      <button class="g-item" type="button" data-slot aria-label="Casual" style="--i:1;">
+        <img src="2.jpeg" alt="Casual" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Casual</span>
+        <span class="g-caption ta">இயல்பான தோற்றம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Simply me" style="--i:2;">
-        <img src="3.jpeg" alt="Simply me" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Simply me</span>
-        <span class="g-caption ta">வெறும் நான்தான்</span>
+      <button class="g-item" type="button" data-slot aria-label="Casual" style="--i:2;">
+        <img src="3.jpeg" alt="Casual" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Casual</span>
+        <span class="g-caption ta">இயல்பான தோற்றம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Roots &amp; tradition" style="--i:3;">
-        <img src="4.jpeg" alt="Roots &amp; tradition" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Roots &amp; tradition</span>
-        <span class="g-caption ta">வேர்களும் பாரம்பரியமும்</span>
+      <button class="g-item" type="button" data-slot aria-label="Traditional" style="--i:3;">
+        <img src="4.jpeg" alt="Traditional" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Traditional</span>
+        <span class="g-caption ta">பாரம்பரியம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Out and about" style="--i:4;">
-        <img src="5.jpeg" alt="Out and about" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Out and about</span>
-        <span class="g-caption ta">வெளியே ஒரு நாள்</span>
+      <button class="g-item" type="button" data-slot aria-label="Casual" style="--i:4;">
+        <img src="5.jpeg" alt="Casual" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Casual</span>
+        <span class="g-caption ta">இயல்பான தோற்றம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Keeping it simple" style="--i:5;">
-        <img src="6.jpeg" alt="Keeping it simple" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Keeping it simple</span>
-        <span class="g-caption ta">எளிமையாக</span>
+      <button class="g-item" type="button" data-slot aria-label="Casual" style="--i:5;">
+        <img src="6.jpeg" alt="Casual" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Casual</span>
+        <span class="g-caption ta">இயல்பான தோற்றம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Sun and sand" style="--i:6;">
-        <img src="8.jpeg" alt="Sun and sand" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Sun and sand</span>
-        <span class="g-caption ta">சூரியனும் மணலும்</span>
+      <button class="g-item" type="button" data-slot aria-label="Travel" style="--i:6;">
+        <img src="8.jpeg" alt="Travel" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Travel</span>
+        <span class="g-caption ta">பயணம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Goa getaway" style="--i:7;">
-        <img src="9.jpeg" alt="Goa getaway" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Goa getaway</span>
-        <span class="g-caption ta">கோவா பயணம்</span>
+      <button class="g-item" type="button" data-slot aria-label="Travel" style="--i:7;">
+        <img src="9.jpeg" alt="Travel" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Travel</span>
+        <span class="g-caption ta">பயணம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
-      <button class="g-item" type="button" data-slot aria-label="Taking it easy" style="--i:8;">
-        <img src="10.jpeg" alt="Taking it easy" onerror="this.closest('[data-slot]').classList.add('missing')">
-        <span class="g-caption en">Taking it easy</span>
-        <span class="g-caption ta">நிதானமாக</span>
+      <button class="g-item" type="button" data-slot aria-label="Casual" style="--i:8;">
+        <img src="10.jpeg" alt="Casual" onerror="this.closest('[data-slot]').classList.add('missing')">
+        <span class="g-caption en">Casual</span>
+        <span class="g-caption ta">இயல்பான தோற்றம்</span>
         <span class="g-overlay"><span class="g-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></span>
         <div class="missing-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
         </div>
       </button>
       <a class="g-item g-cta" href="#contact" style="--i:9;">
-        <span class="en">Wanna know more?</span>
-        <span class="ta">இன்னும் தெரிந்துக்கணுமா?</span>
+        <span class="en">Would you like to know more?</span>
+        <span class="ta">மேலும் தெரிந்துகொள்ள விரும்புகிறீர்களா?</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       </a>
     </div>
@@ -1254,7 +1309,7 @@
 </div>
 
 <footer class="contact" id="contact">
-  <h2><span class="en">Come, let's talk</span><span class="ta">வாங்க, பேசலாம்</span></h2>
+  <h2><span class="en">Let's Connect</span><span class="ta">தொடர்பு கொள்ளுங்கள்</span></h2>
   <a class="call-btn" href="tel:+919487668352">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     9487668352
